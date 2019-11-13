@@ -39,7 +39,7 @@ DGX-1 & intel & TPUv3：这张表需要注意的是加入了强化学习的跑�
 ![avatar](./pics/MLPerf.png)
 - 平台：目前只有Google cloud，也就是说只有云服务器方案
 ## AI芯片调研
-[AI芯片列举](https://github.com/basicmi/AI-Chip)
+[AI芯片列举](https://github.com/basicmi/AI-Chip)  
 目前各厂商AI芯片及其平台主要服务于边缘设备或手机，如intel用于边缘推理的Movidius，英伟达用于自动驾驶的NVIDIA DRIVE™ PX，高通用在手机上的Snapdragon 855。  
 IBM提出了一种类脑芯片，拥有4096个神经元核心进行计算，可以拥有很强的算力，但是对于研究人员开发算法，由于支撑软件尚不成熟，还不算友好。  
 寒武纪的MLU270对标英伟达的Tesla T4，并且支持Tensoflow和Caffe，但是相对来讲开发难度也许不适合实验室所有人。  
@@ -75,36 +75,36 @@ IBM提出了一种类脑芯片，拥有4096个神经元核心进行计算，可�
 [跑分](https://dawn.cs.stanford.edu/benchmark/ImageNet/train.html)  
 [源网页2](https://blog.inten.to/cpu-hardware-for-deep-learning-b91f53cb18af)  
 [源网页3](https://en.wikipedia.org/wiki/AVX-512#CPUs_with_AVX-512)
-在斯坦福的一个指定任务训练竞赛中，intel的36核心Xeon Platinum达到了可以和TPU相提并论的训练速度，是CPU中的佼佼者。（但是部署于Amazon EC2）
-网页2列举了一些可用的深度学习服务器CPU选择，发展最成熟的是intel，在其目前的Xeon Phi和skylake-X系列支持AVX-512指令，该指令可加快高负荷量运算。在今年十月，intel推出了专用于神经计算的AVX512-VNNI指令集，Xeon Platinum 2代均支持该指令集。
-网页3列举了支持AVX512的CPU。
-AMD的CPU支持到AVX-256，但是不支持更大规模向量运算加速。
+在斯坦福的一个指定任务训练竞赛中，intel的36核心Xeon Platinum达到了可以和TPU相提并论的训练速度，是CPU中的佼佼者。（但是部署于Amazon EC2）  
+网页2列举了一些可用的深度学习服务器CPU选择，发展最成熟的是intel，在其目前的Xeon Phi和skylake-X系列支持AVX-512指令，该指令可加快高负荷量运算。在今年十月，intel推出了专用于神经计算的AVX512-VNNI指令集，Xeon Platinum 2代均支持该指令集。  
+网页3列举了支持AVX512的CPU。  
+AMD的CPU支持到AVX-256，但是不支持更大规模向量运算加速。  
 - 上面各跑分榜单中列举的CPU包括
 &emsp;1. XEON® PLATINUM 8260L：主频2.4GHz，睿频3.9GHz，24核心48线程，缓存35.75MB，功耗165W，价格约12599美元（数据上同样性能的8260约7507.17-8226.34美元）。
-[XEON PLATINUM 8260链接](https://www.intel.com/content/www/us/en/products/processors/xeon/scalable/platinum-processors/platinum-8260.html)
+[XEON PLATINUM 8260链接](https://www.intel.com/content/www/us/en/products/processors/xeon/scalable/platinum-processors/platinum-8260.html)  
 &emsp;2. Amazon AWS EC2中包含的CPU：采用的基本是定制Cascade架构处理器，36核心，主频3.6GHz，睿频3.9GHz。跑分中用的c5.xlarge使用价格每小时 0.17 USD，如果一年一直在跑每年1489.2USD。
-[AWS ec2](https://amazonaws-china.com/cn/ec2/)
+[AWS ec2](https://amazonaws-china.com/cn/ec2/)  
 >目前实验室的CPU：
 >i7-6850K：主频3.6GHz，六核心12线程，功耗140W；
 >2*Xeon E5-2603v4：主频1.7GHz，12核心12线程，单CPU功耗85W；
 
 - Xeon 其它性能较强CPU(只列举支持AVX-512的CPU)：
 Platinum系列：  
-共性：最大支持1TB 2933MHz内存，前三者6内存通道，PCIE3.0。后二者12内存通道。
-&emsp;1. 8274：主频3.2GHz，睿频4.0GHz，24核心48线程，缓存35.75MB，功耗240W
-&emsp;2. 8276：主频2.2GHz，睿频4.0GHz，28核心56线程，缓存38.5MB，功耗165W
-&emsp;3. 8284：主频3.0GHz，睿频4.0GHz，28核心56线程，缓存38.5MB，功耗240W
-&emsp;4. 9242：主频2.3GHz，睿频3.8GHz，48核心96线程，缓存71.5MB，功耗350W
-&emsp;5. 9282：主频2.6GHz，睿频3.8GHz，56核心112线程，缓存77MB，功耗400W
+共性：最大支持1TB 2933MHz内存，前三者6内存通道，PCIE3.0。后二者12内存通道。  
+&emsp;1. 8274：主频3.2GHz，睿频4.0GHz，24核心48线程，缓存35.75MB，功耗240W  
+&emsp;2. 8276：主频2.2GHz，睿频4.0GHz，28核心56线程，缓存38.5MB，功耗165W  
+&emsp;3. 8284：主频3.0GHz，睿频4.0GHz，28核心56线程，缓存38.5MB，功耗240W  
+&emsp;4. 9242：主频2.3GHz，睿频3.8GHz，48核心96线程，缓存71.5MB，功耗350W  
+&emsp;5. 9282：主频2.6GHz，睿频3.8GHz，56核心112线程，缓存77MB，功耗400W  
 Gold系列：  
-&emsp;1. 6254：主频3.1GHz，睿频4.0GHz，18核心36线程，缓存24.75MB，功耗200W
-&emsp;2. 6210U&6248：主频2.5GHz，睿频3.9GHz，20核心40线程，缓存27.5MB，功耗150W
-&emsp;3. 6238：主频2.1GHz，睿频3.7GHz，22核心44线程，缓存30.25MB，功耗140W
-&emsp;4. 6212U：主频2.4GHz，睿频3.9GHz，24核心48线程，缓存35.75MB，功耗165W
+&emsp;1. 6254：主频3.1GHz，睿频4.0GHz，18核心36线程，缓存24.75MB，功耗200W  
+&emsp;2. 6210U&6248：主频2.5GHz，睿频3.9GHz，20核心40线程，缓存27.5MB，功耗150W  
+&emsp;3. 6238：主频2.1GHz，睿频3.7GHz，22核心44线程，缓存30.25MB，功耗140W  
+&emsp;4. 6212U：主频2.4GHz，睿频3.9GHz，24核心48线程，缓存35.75MB，功耗165W  
 W系列：  
-&emsp;1. 2295：主频3.0GHz，睿频4.6GHz，18核心36线程，缓存24.75MB，功耗165W
-&emsp;2. 3175X：主频3.1GHz，睿频3.8GHz，28核心56线程，缓存38.5MB，功耗255W
-&emsp;3. 3265：主频2.7GHz，睿频4.4GHz，24核心48线程，缓存33MB，功耗205W
+&emsp;1. 2295：主频3.0GHz，睿频4.6GHz，18核心36线程，缓存24.75MB，功耗165W  
+&emsp;2. 3175X：主频3.1GHz，睿频3.8GHz，28核心56线程，缓存38.5MB，功耗255W  
+&emsp;3. 3265：主频2.7GHz，睿频4.4GHz，24核心48线程，缓存33MB，功耗205W  
 ## 价格调研
 1. Google Cloud(TPU)：
 ![avatar](./pics/TPU-price.png)
