@@ -79,7 +79,7 @@ IBM提出了一种类脑芯片，拥有4096个神经元核心进行计算，可�
 网页2列举了一些可用的深度学习服务器CPU选择，发展最成熟的是intel，在其目前的Xeon Phi和skylake-X系列支持AVX-512指令，该指令可加快高负荷量运算。在今年十月，intel推出了专用于神经计算的AVX512-VNNI指令集，Xeon Platinum 2代均支持该指令集。  
 网页3列举了支持AVX512的CPU。  
 AMD的CPU支持到AVX-256，但是不支持更大规模向量运算加速。  
-- 上面各跑分榜单中列举的CPU包括
+- 上面各跑分榜单中列举的CPU包括：  
 &emsp;1. XEON® PLATINUM 8260L：主频2.4GHz，睿频3.9GHz，24核心48线程，缓存35.75MB，功耗165W，价格约12599美元（数据上同样性能的8260约7507.17-8226.34美元）。
 [XEON PLATINUM 8260链接](https://www.intel.com/content/www/us/en/products/processors/xeon/scalable/platinum-processors/platinum-8260.html)  
 &emsp;2. Amazon AWS EC2中包含的CPU：采用的基本是定制Cascade架构处理器，36核心，主频3.6GHz，睿频3.9GHz。跑分中用的c5.xlarge使用价格每小时 0.17 USD，如果一年一直在跑每年1489.2USD。
